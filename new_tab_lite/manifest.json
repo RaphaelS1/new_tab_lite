@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "New Tab Lite",
   "version": "1.0.0",
-  "description": "No dependency, open source, open every new tab to a custom URL. Code available at https://github.com/raphaelS1/new_tab_lite; MIT licence.",
+  "description": "No dependency, open source, open every new tab to a custom URL.",
   "permissions": ["storage"],
   "chrome_url_overrides": {
     "newtab": "newtab.html"
