@@ -1,9 +1,22 @@
+
+const input = document.querySelector("#url");
+const status = document.querySelector("#status");
+
 chrome.storage.sync.get("url", ({ url }) => {
-  document.querySelector("#url").value = url || "";
+  input.value = url || "";
 });
 
 document.querySelector("#save").onclick = () => {
-  const url = document.querySelector("#url").value.trim();
-  if (url && !/^https?:\/\//i.test(url)) return alert("Enter a valid HTTP(S) URL");
-  chrome.storage.sync.set({ url });
+  const url = input.value.trim();
+  if (url && !/^https?:\/\/.+\..+/i.test(url)) {
+    status.textContent = "Please enter a valid URL starting with https://";
+    status.style.color = "#c62828";
+    return;
+  }
+  chrome.storage.sync.set({ url }, () => {
+    status.textContent = "Saved! New tabs will now open this URL.";
+    status.style.color = "#16803c";
+  });
 };
+
+input.oninput = () => status.textContent = "";

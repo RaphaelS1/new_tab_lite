@@ -1,3 +1,48 @@
-<input id="url" type="url" placeholder="https://example.com">
-<button id="save">Save</button>
+
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>New Tab Redirect — Settings</title>
+<style>
+  body {
+    font: 14px system-ui, sans-serif;
+    max-width: 440px;
+    margin: 60px auto;
+    padding: 0 20px;
+    color: #242424;
+  }
+  h1 { font-size: 22px; margin-bottom: 8px; }
+  p { color: #666; line-height: 1.5; }
+  label { display: block; margin: 28px 0 8px; font-weight: 600; }
+  input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+    font: inherit;
+  }
+  button {
+    margin-top: 16px;
+    padding: 10px 22px;
+    background: #2563eb;
+    color: white;
+    border: 0;
+    border-radius: 6px;
+    font: inherit;
+    cursor: pointer;
+  }
+  button:hover { background: #1d4ed8; }
+  #status { color: #16803c; }
+</style>
+
+<h1>New Tab Lite</h1>
+<p>Choose the website you'd like to open automatically whenever you create a new tab.</p>
+
+<label for="url">Website URL</label>
+<input id="url" type="url" placeholder="https://example.com" required>
+<button id="save">Save URL</button>
+<p id="status" role="status"></p>
+
 <script src="options.js"></script>
+</html>
